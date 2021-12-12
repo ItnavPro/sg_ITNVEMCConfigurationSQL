@@ -1,0 +1,49 @@
+ITNVSingleInstance		ITNVSingleInstance
+ITNVTopmostForm			ITNVTopmostForm
+ITNVUnchangeableFormSize	ITNVUnchangeableFormSize
+ITNVInvisibleIcons		ITNVInvisibleIcons
+ITNAVPROGeneral			ITNAVPROGeneral Plugin
+ITNVIVIMyPro			ITNVIVIMyPro
+======================================
+-->ITNVSingleInstance
+Assembly File Name	ITNVSingleInstance.dll
+----------------------------------------
+-->ITNVUnchangeableFormSize
+Assembly File Name	ITNVUnchangeableFormSize.dll
+Desktop Sizable		false
+----------------------------------------
+-->ITNAVPROGeneral Plugin	
+Assembly File Name	EMCDesktopPluginGeneral.dll
+Project			ITNAV
+-->ITNAVMain
+PersonalGreeting
+RoboHoldDTMF
+RoboHoldVDNS
+AutoanswerStationLength
+PersonalGreetingLength
+LangPosition
+-------------------------------------------
+-->ITNVTopmostForm
+Assembly File Name	ITNVTopmostForm.dll		
+TopMost			false				If TopMost=true,in the User section change the Assembly File Name from ASGUIHUserPlugin.dll to ITNVGUIHUserPlugin.dll
+-------------------------------------------
+-->ITNVInvisibleIcons
+Assembly File Name	ITNVInvisibleIcons.dll
+Visible Chat		false
+Visible Custom		false
+Visible DMCC		false
+Visible Email		false
+Visible Home		false
+Visible PCMS		false
+Visible Reporting	false
+Visible Voice		false
+-------------------------------------------
+-->ITNVIVIMyPro
+Assembly File Name	ITNVIVIMyPro.dll
+Enabled			false
+IVIMyProExe
+IVIMyProConfigURL
+IVIMyProBackendURL
+IVIMyProPort		9000		netsh http add urlacl url=http://+:9000/ user=Everyone
+IVIMyProEvent		Alerting	Alerting/Established
+IVIMyProAgentGroup	
