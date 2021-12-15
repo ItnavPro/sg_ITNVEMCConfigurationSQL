@@ -47,7 +47,7 @@ EXEC stpAddTemplateSection 'ITNAVPROGeneral', ''
 exec stpAddTemplatePrimaryEx @AppID, 'Assembly File Name', 'EMCDesktopPluginGeneral.dll', 'ITNAVPROGeneral', '',1,1,1,0
 exec stpAddTemplatePrimaryEx @AppID, 'Project', 'ITNAV', 'ITNAVPROGeneral', '',1,1,1,0
 
-EXEC stpAddTemplateSection '>ITNAVMain', ''
+EXEC stpAddTemplateSection 'ITNAVMain', ''
 exec stpAddTemplatePrimaryEx @AppID, 'PersonalGreeting', '', 'ITNAVMain', 'Humt group extension for personal greetong IVR app',1,1,1,0
 exec stpAddTemplatePrimaryEx @AppID, 'RoboHoldDTMF', '', 'ITNAVMain', '',1,1,1,0
 exec stpAddTemplatePrimaryEx @AppID, 'RoboHoldVDNS', '', 'ITNAVMain', '',1,1,1,0

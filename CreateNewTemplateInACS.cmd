@@ -19,15 +19,20 @@ exit /b 1
 :args_count_ok
 Set source=%~1
 Set target=%~2
-
-if "%4" == "" (Set user=ACS) else (Set user=%~4)
-if "%5" == "" (Set password=CCEUser0) else (Set password=%~5)
+if not "%~3" == "" (Set dbserverip=%~3)
+if "%~4" == "" (Set user=ACS) else (Set user=%~4)
+if "%~5" == "" (Set password=CCEUser0) else (Set password=%~5)
 echo Source:     %source% 
 echo Target:     %target% 
-echo DBServerIP: %3 
+echo DBServerIP: %dbserverip% 
 echo DBUser:     %user%
 echo DBPassword: %password%
 
-sqlcmd -S %3 -U %user% -P %password% -v source="'%source%'" target="'%target%'" -i CreateNewTemplateInACS.sql
+sqlcmd -S %dbserverip% -U %user% -P %password% -v source="'%source%'" target="'%target%'" -i CreateNewTemplateInACS.sql
+SET source= 
+SET target=
+SET user= 
+SET password=
+
 exit /b 0
 pause

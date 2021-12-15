@@ -3,7 +3,8 @@ open cmd
 cd <to this dir>
 run the following command
 CreateNewTemlateInACS.cmd "<source template>" "<new template>" <DBServerIP> <DBUser> <DBPassword>
-
+If the first command will run _SETdbserverip.cmd <DBServerIP>, 
+then db server ip address can be "" (double quotes).
 This script requires a minimum of 3 and a maximum of 5 command line arguments. 
 	1) Source Template in double quotes, for example: "CC Elite Multichannel Desktop"
 	2) Target Template in double quotes, for example: "CCE TEST1"
@@ -15,3 +16,4 @@ EXAMPLE
 CreateNewTemlateInACS.cmd "CC Elite Multichannel Desktop" "NEW AGENT DESKTOP" 172.16.5.246 ACS CCEUser0
 CreateNewTemlateInACS.cmd "CC Elite Multichannel Desktop" TEST2 172.16.5.246 ACS CCEUser0
 CreateNewTemlateInACS.cmd "CC Elite Multichannel Desktop" TEST3 172.16.5.246 
+CreateNewTemlateInACS.cmd "CC Elite Multichannel Desktop" TEST4 ""  - if _SETdbserverip.cmd was launched first in CMD

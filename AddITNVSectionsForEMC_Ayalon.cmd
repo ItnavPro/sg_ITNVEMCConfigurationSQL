@@ -18,14 +18,18 @@ echo ----------------- E R R O R ------------------
 exit /b 1
 
 :args_count_ok
-if "%1" == "" (Set template="CC Elite Multichannel Desktop") else (Set template=%~1)
-if "%3" == "" (Set user=ACS) else (Set user=%~4)
-if "%4" == "" (Set password=CCEUser0) else (Set password=%~5)
+if "%~1" == "" (Set template=CC Elite Multichannel Desktop) else (Set template=%~1)
+if not "%~2" == "" (Set dbserverip=%~2)
+if "%~3" == "" (Set user=ACS) else (Set user=%~4)
+if "%~4" == "" (Set password=CCEUser0) else (Set password=%~5)
 echo AppTemplate:	%template% 
-echo DBServerIP: 	%2 
+echo DBServerIP: 	%dbserverip% 
 echo DBUser:     	%user%
 echo DBPassword: 	%password%
 
-sqlcmd -S %2 -U %user% -P %password% -v template="'%template%'" -i AddITNVSectionsForEMC_Ayalon.sql
+sqlcmd -S %dbserverip% -U %user% -P %password% -v template="'%template%'" -i AddITNVSectionsForEMC_Ayalon.sql
+Set template=
+Set user=
+Set password=
+
 exit /b 0
-pause
